@@ -1,0 +1,32 @@
+// an ignored comment
+/** not an ignored comment */
+entity Organization {
+	name String required,
+}
+
+entity Team {
+	name String required
+}
+
+entity Group {
+	name String required
+}
+
+entity User {
+	name String required
+}
+
+
+relationship ManyToOne {
+	Team{Organization} to Organization
+    Group{Team} to Team
+}
+
+relationship ManyToMany {
+	User{Group} to Group
+}
+
+dto * with mapstruct
+ 
+// Set an angular suffix
+angularSuffix * with mySuffix
